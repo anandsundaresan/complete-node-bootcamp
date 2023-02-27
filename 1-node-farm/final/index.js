@@ -94,3 +94,36 @@ const server = http.createServer((req, res) => {
 server.listen(8000, '127.0.0.1', () => {
   console.log('Listening to requests on port 8000');
 });
+
+/* 
+Node commands
+npm init // Creates package.json where all our project information is stored
+
+npm install slugify // Install package as a regular/local dependency
+
+npm install nodemon --save-dev // Install a package which will be used only during dev or devDependency
+
+npm install nodemon --global // Global install of a package
+
+To use packages installed as devDependency, define a tag in scripts property eg: start
+npm run start
+or
+npm start
+
+"slugify": "^1.6.5" // ^ accepts minor and patch updates, not major version update
+"slugify": "~1.6.5" // ~ accepts only patch update not major or minor
+"slugify": "*1.6.5" // * accepts all updates
+
+npm outdated // To check outdated packages
+
+npm update slugify // To update package
+
+npm uninstall express // To uninstall package
+
+Never share node_modules folder. 
+npm install // This downloads the folder again after referring package.json
+
+package-lock.json file has the version details of all the packages from node_modules folder
+
+Install DotEnv, Image Preview, ESLint, Pug Beautify, TabNine, TODO Highlights
+*/
