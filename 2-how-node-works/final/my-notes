@@ -1,1 +1,10 @@
+NodeJS comprises of: 
+1) v8 javascript engine ( C++ and JS ) => converts js code to machine code that computer can understand
+2) libuv ( C++ ) => open source library with strong focus on asynchronus IO. This layer gives nodejs access to OS, filesystem, network etc. Also implements event loop and thread pool.
+   * Event Loop => Responsible for handling easy tasks like executing callbacks and network IO. Offloads heavy tasks to thread pool.
+   * Thread Pool => For more complex work like file access/compression etc. 4 to 128 threads
 
+NodeJS has event driven architecture. Whenever an event occures event loop picks them up and associated callbacks are called. More heavier callback tasks are delegated to thread pool.
+
+Callbacks from resolved promises are run in microtasks queue. Once promise is resolved, the promises's callback is executed immediately after current callback being executed in event loop finishes.
+Promises callback has precedence over other callbacks queued in event loop.
